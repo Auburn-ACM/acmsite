@@ -1,5 +1,4 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 from .models import Event
 
 # Create your views here.
@@ -12,7 +11,7 @@ def index(request):
     return render(request, 'events/index.html', context)
 
 def detail(request, event_id):
-    event = Event.objects.get(pk=event_id)
+    event = get_object_or_404(Event, pk=event_id)
     context = {
         'event': event,
     }

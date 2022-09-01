@@ -1,0 +1,15 @@
+{% extends "./base.html" %}
+{% block title %}Auburn ACM{% endblock %}
+
+{% block content %}
+    <h1> Welcome to the ACM Website! </h1>
+    {% if event_list %}
+    <div>
+        {% for event in event_list %}
+        <h3><a href="{% url 'detail' event.id %}">{{ event.name }}</a></h3>
+        {% endfor %}
+    </div>
+    {% else %}
+    <p>No events found</p>
+    {% endif %}
+{% endblock %}
