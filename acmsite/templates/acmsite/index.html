@@ -2,7 +2,9 @@
 {% block title %}Auburn ACM{% endblock %}
 
 {% block content %}
-    <h1> Welcome to the ACM Website! </h1>
+    <div class="flex-row justify-center">
+        <h1 class="text-center">Welcome to the ACM Website!</h1>
+    </div>
     {% if event_list %}
     <div>
         {% for event in event_list %}
