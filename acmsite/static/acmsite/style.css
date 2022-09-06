@@ -1,20 +1,74 @@
 html{
     box-sizing: border-box;
-    margin: 0.5rem;
+    font-family: "Roboto", sans-serif;
+    background-color: #EDF1F5;
+}
+a {
+    text-decoration: none;
 }
 
+/* DISPLAY */
+.absolute {
+    position: absolute;
+}
+
+/* FONTS */
+.font-primary{
+    font-family: "roboto", sans-serif;
+}
+.font-secondary {
+    font-family: "inter", sans-serif;
+}
+.text-very-bold {
+    font-weight: 900;
+}
+.text-bold {
+    font-weight: 800;
+}
+.text-semibold {
+    font-weight: 600;
+}
+.text-normal {
+    font-weight: 500;
+}
+
+/* TEXT SIZE */
+.text-sm {
+    font-size: 1rem;
+}
+.text-md {
+    font-size: 1.2rem;
+}
+.text-lg {
+    font-size: 1.75rem;
+}
+
+.text-3xl {
+    font-size: 5rem;
+}
+
+
+/* TEXT COLORS */
+.text-orange {
+    color: #BC490B;
+}
+.text-dark-blue {
+    color: #032045;
+}
+.text-light-blue {
+    color: #354D6A;
+} 
 .text-center{
     text-align: center;
 }
-
 .text-right{
     text-align: right;
 }
-
 .text-left{
     text-align: left;
 }
 
+/* FLEX CLASSES */
 .flex-row{
     display: flex;
     flex-direction: row;
@@ -26,6 +80,45 @@ html{
 .justify-center{
     justify-content: center;
 }
+.justify-between {
+    justify-content: space-between;
+}
 .align-center{
     align-items: center;
+}
+.gap-1{
+    gap: 1rem;
+}
+
+/* MARGIN CLASSES */
+.mx-1{
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.mx-auto{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* PADDING CLASSES */
+.px-1{
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* LENGHT AND WIDTH */
+.w-100{
+    width: 100%;
+}
+.w-min-content {
+    width: min-content;
+}
+
+/* MISC */
+.list-style-none{
+    list-style: none;
+}
+.image-holder{
+    background-color: lightgray;
+    border: 2px solid darkgray;
 }

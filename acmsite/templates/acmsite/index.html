@@ -2,9 +2,19 @@
 {% block title %}Auburn ACM{% endblock %}
 
 {% block content %}
-    <div class="flex-row justify-center">
-        <h1 class="text-center">Welcome to the ACM Website!</h1>
+    <div class="flex-row">
+        <div class="w-100">
+            <h1 class="text-very-bold text-dark-blue w-min-content text-3xl">AUBURN ACM</h1>
+        </div>
+        <div class="image-holder w-100">
+            
+        </div>
     </div>
+    <h1 class="mx-auto text-center text-dark-blue">ABOUT</h1>
+    <h1 class="mx-auto text-center text-dark-blue">CLUBS</h1>
+
+    <h1 class="mx-auto text-center text-dark-blue">FEATURED EVENTS</h1>
+    {% comment %} Makes list of events, will format later {% endcomment %}
     {% if event_list %}
     <div>
         {% for event in event_list %}
@@ -14,4 +24,6 @@
     {% else %}
     <p>No events found</p>
     {% endif %}
+    
+    <h1 class="mx-auto text-center text-dark-blue">OFFICERS</h1>
 {% endblock %}
