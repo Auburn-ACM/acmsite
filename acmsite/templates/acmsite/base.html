@@ -9,9 +9,14 @@
     <link rel="stylesheet" href="{% static 'acmsite/style.css' %}">
     <link rel="shortcut icon" type="image/png" href="{% static 'acmsite/favicon.png' %}"/>
   </head>
-  <nav class="flex-row justify-between mx-1 align-center">
+  
+  <body>
+    <nav class="flex-row w-100 align-center fixed top-0 left-0 justify-between px-1">
       <div>
-        <h2 class="text-very-bold text-lg"><span class="text-orange">AUBURN</span><span class="text-blue"> ACM</span></h2>
+        <h2 class="text-very-bold text-lg">
+          <span class="text-orange">AUBURN</span>
+          <span class="text-blue"> ACM</span>
+        </h2>
       </div>
       <div>
         <ul class="flex-row gap-1 list-style-none font-secondary text-semibold text-md">
@@ -21,9 +26,10 @@
           <li><a class="text-dark-blue" href="">Calendar</a></li>
         </ul>
       <div>
-
-  </nav>
-  <body>
-    {% block content %} {% endblock %}
+    </nav>
+    {% comment %} TODO figure out semantic HTML tag for this {% endcomment %}
+    <div class="mt-10">
+      {% block content %} {% endblock %}
+    </div>
   </body>
 </html>
