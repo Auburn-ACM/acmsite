@@ -1,19 +1,65 @@
 {% extends "./base.html" %}
+{% load static %}
+
 {% block title %}Auburn ACM{% endblock %}
 
 {% block content %}
     <div class="flex-row">
         <div class="w-50">
             <h1 class="text-very-bold text-dark-blue w-min-content text-3xl mx-1" id="big-auacm">AUBURN ACM</h1>
-            <p class="mx-1">The Association for Computing Machinery (ACM) is a global scientific and educational organization dedicated to advancing the art, science, engineering, and application of computing, serving both professional and public interests by fostering the open exchange of information and by promoting the highest professional and ethical standards.</p>
+            <p class="mx-1 font-secondary text-light-blue">The Association for Computing Machinery (ACM) is a global scientific and educational organization dedicated to advancing the art, science, engineering, and application of computing, serving both professional and public interests by fostering the open exchange of information and by promoting the highest professional and ethical standards.</p>
         </div>
         <div class="w-50 flex-row align-center justify-center">
             <div id="video-holder"></div>
         </div>
             
     </div>
-    <h1 class="mx-auto text-center text-dark-blue">ABOUT</h1>
-    <h1 class="mx-auto text-center text-dark-blue">CLUBS</h1>
+    <section class="mx-1 text-center">
+        <h1 class="text-dark-blue text-4xl">ABOUT</h1>
+        <p class="font-secondary text-light-blue">ACM’s broad‐based infrastructure supports more than 860 professional and student chapters worldwide. These "local neighborhoods" offer opportunities for members to gain access to critical research and establish personal networking systems.</p>
+        
+        <h2 class="text-dark-blue text-lg my-1">CLUBS</h2>
+        <p class="font-secondary text-light-blue">At Auburn University’s chapter of ACM, students can participate in clubs that pertain to various computer science topics. Our three clubs, Competitive Programming Team (CPT), Ethical Hacking Club (EHC), and Makerspace, provide valuable experience with programming that students otherwise would not receive through their coursework alone.</p>
+        
+        <h2 class="text-dark-blue text-lg">EVENTS</h2>
+        <p class="font-secondary text-light-blue">Auburn ACM also hosts events, including its annual Auburn Hackathon and monthly Tech Talks. These events allow students to explore computer science further and give insight to the opportunities that are available to students during college and beyond.</p>
+    </section>
+    <section class="mx-1 text-center">
+        <h1 class="text-dark-blue text-4xl">CLUBS</h1>
+        <div class="flex-row align-start justify-around w-100">
+            <a href="">
+                <div class="card">
+                    <div class="card-image">
+                        <img alt="CPT Logo" src="{% static 'acmsite/cpt_leetcode_logo.png' %}" />
+                    </div>
+                    <div class="card-bottom">
+                        <p>Competitive Programming Team</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="card">
+                    <div class="card-image">
+                        <img alt="EHC Logo" src="{% static 'acmsite/ehc_logo.png' %}" />
+                    </div>
+                    <div class="card-bottom">
+                        <p>Ethical Hacking Club</p>
+                    </div>
+                </div>
+            </a>
+            <a href="">
+                <div class="card">
+                    <div class="card-image">
+                        <img alt="CS Makerspace Logo" src="{% static 'acmsite/makerspace_logo.png' %}" />
+                    </div>
+                    <div class="card-bottom">
+                        <p>CS Makerspace</p>
+                    </div>
+                </div>
+            </a>
+
+        </div>
+    </section>
 
     <h1 class="mx-auto text-center text-dark-blue">FEATURED EVENTS</h1>
     {% comment %} Makes list of events, will format later {% endcomment %}
