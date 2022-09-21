@@ -64,13 +64,25 @@
     <h1 class="mx-auto text-center text-dark-blue">FEATURED EVENTS</h1>
     {% comment %} Makes list of events, will format later {% endcomment %}
     {% if event_list %}
-    <div>
+    <div class="px-1">
         {% for event in event_list %}
-        <h3><a href="{% url 'detail' event.id %}">{{ event.name }}</a></h3>
+        <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1">
+            <div class="text-orange px-1">
+                <p>{{event.date}}<p>
+            </div>
+            <div class="text-left text-dark-blue flex-grow-1">
+                <h3><a h ref="{% url 'detail' event.id %}">{{ event.name }}</a></h3>
+            </div>
+            <div class="text-light-blue text-thin px-1">
+                <p>Read More</p>
+            </div>
+        </div>
         {% endfor %}
     </div>
     {% else %}
-    <p>No events found</p>
+    <div class="text-center w-100 px-2">
+        <p class="text-dark-blue text-semibold font-secondary">No events found</p>
+    </div>
     {% endif %}
     
     <h1 class="mx-auto text-center text-dark-blue">OFFICERS</h1>
