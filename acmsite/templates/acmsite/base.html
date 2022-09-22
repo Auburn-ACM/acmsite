@@ -32,9 +32,21 @@
       <div class="sidebar-button">
         <img src="{% static 'acmsite/discord.svg' %}" alt="discord" />
       </div>
+      <div class="sidebar-button">
+        <img src="{% static 'acmsite/groupme.svg' %}" alt="groupme" />
+      </div>
+      <div class="sidebar-button">
+        <img src="{% static 'acmsite/instagram.svg' %}" alt="instagram" />
+      </div>
+      <div class="sidebar-button p-0.25">
+        <img src="{% static 'acmsite/github.svg' %}" alt="github" />
+      </div>
+      <div class="sidebar-button">
+        <img src="{% static 'acmsite/mail.svg' %}" alt="email" />
+      </div>
     </div>
     {% comment %} TODO figure out semantic HTML tag for this {% endcomment %}
-    <div class="mt-5">
+    <div class="mt-5 mr-2">
       {% block content %} {% endblock %}
     </div>
   </body>
