@@ -217,7 +217,7 @@ a {
     padding: 0.5rem;
     width: 100%;
     height: 10rem;
-    border-radius: 1rem
+    border-radius: 1rem;
 }
 .card img {
     width: 100%;
@@ -228,8 +228,8 @@ a {
     font-family: var(--font-secondary);
     color: var(--au-dark-blue);
 }
-.card:hover {
-    box-shadow: 0 0 0 0.25rem var(--au-orange);
+.card:hover .card-image {
+    padding: 0;
 }
 .card .card-bottom {
     padding-top: 0.75rem;
@@ -274,15 +274,23 @@ a {
     height: 100%;
 }
 .officer:hover .officer-image {
-    opacity: 0.3;
-    z-index: 0;
+    background-color: var(--au-bg);
+    opacity: 0.2;
+    z-index: 0; 
 }
 .officer:hover .officer-body {
     z-index: 1;
 }
 
+.sidebar {
+    position: fixed;
+    top: 10rem;
+    right: 0;
+    z-index: 100;
+}
+
 #big-auacm {
-    font-size: 9vw;
+    font-size: 7vw;
     line-height: 1em;
 }
 #video-holder {
