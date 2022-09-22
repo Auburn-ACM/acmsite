@@ -86,4 +86,20 @@
     {% endif %}
     
     <h1 class="mx-auto text-center text-dark-blue">OFFICERS</h1>
+    <div class="flex-row px-1 justify-around gap-1 w-100 absolute">
+        {% for position, first, last in officer_list %}
+        <div class="officer">
+            <div class="officer-body">
+                <h3 class="officer-name">
+                    <p>{{first}}</p>
+                    <p>{{last}}</p>
+                </h3>
+                <p class="officer-title">{{position}}</p>
+            </div>
+            <div class="officer-image">
+                <img alt={{position}} src="{% static 'acmsite/officer_placeholder.png' %}" />
+            </div>
+        </div>  
+        {% endfor %}
+    </div> 
 {% endblock %}

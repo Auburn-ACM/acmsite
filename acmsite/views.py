@@ -8,6 +8,13 @@ def index(request):
     event_list = Event.objects.order_by('date')
     context = {
         'event_list': event_list,
+        'officer_list': (
+            ('President', 'First', 'Last'),
+            ('Vice President', 'First', 'Last'),
+            ('Treasurer', 'First', 'Last'),
+            ('Secretary', 'First', 'Last')
+        )
+
     }
     return render(request, 'acmsite/index.html', context)
 

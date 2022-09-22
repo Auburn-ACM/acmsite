@@ -239,6 +239,47 @@ a {
     background-color: white;
     border-radius: 0 0 0.9rem 0.9rem;
 }
+.officer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 20vmin;
+    height: 20vmin;
+    border-radius: 100%;
+}
+.officer p {
+    line-height: 0.25rem;
+}
+.officer .officer-body {
+    z-index: 0;
+    text-align: center;
+}
+.officer .officer-body .officer-name {
+    font-weight: 700;
+    color: var(--au-dark-blue);
+}
+.officer .officer-body .officer-title {
+    padding-top: 0.25rem;
+    font-weight: 500;
+    color: var(--au-orange);
+}
+.officer .officer-image {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.officer-image img {
+    width: 100%;
+    height: 100%;
+}
+.officer:hover .officer-image {
+    opacity: 0.3;
+    z-index: 0;
+}
+.officer:hover .officer-body {
+    z-index: 1;
+}
 
 #big-auacm {
     font-size: 9vw;
