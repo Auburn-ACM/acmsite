@@ -22,6 +22,9 @@ a {
 .fixed {
     position: fixed;
 }
+.relative {
+    position: relative;
+}
 
 /* FONTS */
 .font-primary{
@@ -79,6 +82,9 @@ a {
 .text-light-blue {
     color: var(--au-light-blue);
 } 
+.text-white {
+    color: white;
+}
 .text-center{
     text-align: center;
 }
@@ -95,6 +101,9 @@ a {
 }
 .bg-black {
     background-color: black;
+}
+.bg-dark-blue {
+    background-color: var(--au-dark-blue);
 }
 
 /* FLEX CLASSES */
@@ -138,6 +147,9 @@ a {
 .right-0 {
     right: 0;
 }
+.bottom-0 {
+    bottom: 0;
+}
 
 /* MARGIN CLASSES */
 .mx-1{
@@ -173,6 +185,10 @@ a {
 }
 .p-0\.25 {
     padding: 0.25rem !important;
+}
+.py-2 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 /* LENGHT AND WIDTH */
