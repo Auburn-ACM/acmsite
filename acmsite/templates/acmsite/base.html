@@ -50,6 +50,23 @@
       {% block content %} {% endblock %}
     </div>
     <footer class="bg-dark-blue w-100 py-2 mt-5 relative bottom-0">
+      <div class="flex-row gap-2 align-center justify-center w-100">
+        <div class="sidebar-button">
+          <img src="{% static 'acmsite/discord.svg' %}" alt="discord" />
+        </div>
+        <div class="sidebar-button">
+          <img src="{% static 'acmsite/groupme.svg' %}" alt="groupme" />
+        </div>
+        <div class="sidebar-button">
+          <img src="{% static 'acmsite/instagram.svg' %}" alt="instagram" />
+        </div>
+        <div class="sidebar-button p-0.25">
+          <img src="{% static 'acmsite/github.svg' %}" alt="github" />
+        </div>
+        <div class="sidebar-button">
+          <img src="{% static 'acmsite/mail.svg' %}" alt="email" />
+        </div>
+      </div>
       <p class="font-secondary text-white text-center">Copyright @ ACM at Auburn University 2022</p>
     </footer>
   </body>

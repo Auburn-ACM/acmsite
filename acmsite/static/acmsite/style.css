@@ -109,7 +109,7 @@ a {
 /* FLEX CLASSES */
 .flex-row{
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
 }
 .flex-col{
     display: flex;
@@ -135,6 +135,9 @@ a {
 }
 .gap-1{
     gap: 1rem;
+}
+.gap-2{
+    gap: 2rem; 
 }
 
 /* POSITIONING CLASSES */
@@ -233,12 +236,12 @@ a {
     border-radius: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    width: 10rem;
+    width: 15rem;
 }
 .card .card-image {
     padding: 0.5rem;
     width: 100%;
-    height: 10rem;
+    height: 15rem;
     border-radius: 1rem;
 }
 .card img {
@@ -248,18 +251,22 @@ a {
 .card p {
     margin: 0;
     font-family: var(--font-secondary);
+    font-size: 1.25rem;
+    font-weight: 500;
+    text-align: left;
     color: var(--au-dark-blue);
 }
 .card:hover .card-image {
     padding: 0;
 }
 .card .card-bottom {
-    padding-top: 0.75rem;
-    padding-bottom: 0.75rem;
+    padding: 0.75rem 1rem;
     width: 100%;
-    height: 100%;
+    height: 5rem;
     background-color: white;
     border-radius: 0 0 0.9rem 0.9rem;
+    display: flex;
+    align-items: center;
 }
 .officer {
     display: flex;
@@ -321,7 +328,7 @@ a {
     height: 3rem;
     padding: 0.4rem;
 }
-.sidebar img { 
+.sidebar-button img { 
     width: 100%;
     height: 100%;
 }
