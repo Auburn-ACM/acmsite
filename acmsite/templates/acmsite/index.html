@@ -66,15 +66,16 @@
     {% if event_list %}
     <div class="px-1">
         {% for event in event_list %}
-        <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1">
+        <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
             <div class="text-orange px-1">
                 <p>{{event.date}}<p>
             </div>
             <div class="text-left text-dark-blue flex-grow-1">
                 <h3><a h ref="{% url 'detail' event.id %}">{{ event.name }}</a></h3>
             </div>
-            <div class="text-light-blue text-thin px-1">
-                <p>Read More</p>
+            <div class="text-light-blue text-thin px-1 trigger:right-arrow z-1">
+                <span>Read More</span>
+                <img src="{% static 'acmsite/right_arrow.svg' %}" alt="Right Arrow" class="z--1" />
             </div>
         </div>
         {% endfor %}
