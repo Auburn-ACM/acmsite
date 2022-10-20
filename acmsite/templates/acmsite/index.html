@@ -4,103 +4,118 @@
 {% block title %}Auburn ACM{% endblock %}
 
 {% block content %}
-    <div class="flex-row">
-        <div class="w-50">
-            <h1 class="text-very-bold text-dark-blue w-min-content text-3xl mx-1" id="big-auacm">AUBURN ACM</h1>
-            <p class="mx-1 font-secondary text-light-blue">The Association for Computing Machinery (ACM) is a global scientific and educational organization dedicated to advancing the art, science, engineering, and application of computing, serving both professional and public interests by fostering the open exchange of information and by promoting the highest professional and ethical standards.</p>
-        </div>
-        <div class="w-50 flex-row align-center justify-center">
-            <div id="video-holder"></div>
-        </div>
-            
+<div class="flex-row m-top-content">
+    <div class="w-50 m-descrip-video">
+        <h1 class="text-very-bold text-dark-blue w-min-content text-3xl" id="big-auacm">AUBURN ACM</h1>
+        <p class="font-secondary text-light-blue">The Association for Computing Machinery (ACM) is a global
+            scientific and educational organization dedicated to advancing the art, science, engineering, and
+            application of computing, serving both professional and public interests by fostering the open exchange of
+            information and by promoting the highest professional and ethical standards.</p>
     </div>
-    <section class="mx-1 text-center">
-        <h1 class="text-dark-blue text-4xl">ABOUT</h1>
-        <p class="font-secondary text-light-blue">ACM’s broad‐based infrastructure supports more than 860 professional and student chapters worldwide. These "local neighborhoods" offer opportunities for members to gain access to critical research and establish personal networking systems.</p>
-        
-        <h2 class="text-dark-blue text-lg my-1">CLUBS</h2>
-        <p class="font-secondary text-light-blue">At Auburn University’s chapter of ACM, students can participate in clubs that pertain to various computer science topics. Our three clubs, Competitive Programming Team (CPT), Ethical Hacking Club (EHC), and Makerspace, provide valuable experience with programming that students otherwise would not receive through their coursework alone.</p>
-        
-        <h2 class="text-dark-blue text-lg">EVENTS</h2>
-        <p class="font-secondary text-light-blue">Auburn ACM also hosts events, including its annual Auburn Hackathon and monthly Tech Talks. These events allow students to explore computer science further and give insight to the opportunities that are available to students during college and beyond.</p>
-    </section>
-    <section class="mx-1 text-center">
-        <h1 class="text-dark-blue text-4xl">CLUBS</h1>
-        <div class="flex-row align-start justify-center gap-1 w-100">
-            <a href="">
-                <div class="card">
-                    <div class="card-image">
-                        <img alt="CPT Logo" src="{% static 'acmsite/cpt_leetcode_logo.png' %}" />
-                    </div>
-                    <div class="card-bottom">
-                        <p>Competitive Programming Team</p>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="card">
-                    <div class="card-image">
-                        <img alt="EHC Logo" src="{% static 'acmsite/ehc_logo.png' %}" />
-                    </div>
-                    <div class="card-bottom">
-                        <p>Ethical Hacking Club</p>
-                    </div>
-                </div>
-            </a>
-            <a href="">
-                <div class="card">
-                    <div class="card-image">
-                        <img alt="CS Makerspace Logo" src="{% static 'acmsite/makerspace_logo.png' %}" />
-                    </div>
-                    <div class="card-bottom">
-                        <p>CS Makerspace</p>
-                    </div>
-                </div>
-            </a>
+    <div class="w-50 flex-row align-center justify-center mr-2">
+        <div id="video-holder"></div>
+    </div>
+</div>
+<div class="mb-150px wl-arrow">
+    <!-- put arrow here -->
+</div>
+<section class="text-center m-about">
+    <h1 class="text-dark-blue text-4xl mb-40px">ABOUT</h1>
+    <p class="font-secondary text-light-blue mb-30px">ACM’s broad‐based infrastructure supports more than 860
+        professional and
+        student chapters worldwide. These "local neighborhoods" offer opportunities for members to gain access to
+        critical research and establish personal networking systems.</p>
 
-        </div>
-    </section>
+    <h2 class="text-dark-blue text-lg mb-15px">CLUBS</h2>
+    <p class="font-secondary text-light-blue mb-30px">At Auburn University’s chapter of ACM, students can participate in
+        clubs
+        that pertain to various computer science topics. Our three clubs, Competitive Programming Team (CPT), Ethical
+        Hacking Club (EHC), and Makerspace, provide valuable experience with programming that students otherwise would
+        not receive through their coursework alone.</p>
 
-    <h1 class="mx-auto text-center text-dark-blue">FEATURED EVENTS</h1>
-    {% comment %} Makes list of events, will format later {% endcomment %}
-    {% if event_list %}
-    <div class="px-1">
-        {% for event in event_list %}
-        <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
-            <div class="text-orange px-1">
-                <p>{{event.date}}<p>
+    <h2 class="text-dark-blue text-lg mb-15px">EVENTS</h2>
+    <p class="font-secondary text-light-blue mb-150px">Auburn ACM also hosts events, including its annual Auburn
+        Hackathon and
+        monthly Tech Talks. These events allow students to explore computer science further and give insight to the
+        opportunities that are available to students during college and beyond.</p>
+</section>
+<section class="mx-1 text-center">
+    <h1 class="text-dark-blue text-4xl mb-40px">CLUBS</h1>
+    <div class="flex-row align-start justify-center gap-1 w-100">
+        <a href="">
+            <div class="card">
+                <div class="card-image">
+                    <img alt="CPT Logo" src="{% static 'acmsite/cpt_leetcode_logo.png' %}" />
+                </div>
+                <div class="card-bottom">
+                    <p>Competitive Programming Team</p>
+                </div>
             </div>
-            <div class="text-left text-dark-blue flex-grow-1">
-                <h3><a h ref="{% url 'detail' event.id %}">{{ event.name }}</a></h3>
+        </a>
+        <a href="">
+            <div class="card">
+                <div class="card-image">
+                    <img alt="EHC Logo" src="{% static 'acmsite/ehc_logo.png' %}" />
+                </div>
+                <div class="card-bottom">
+                    <p>Ethical Hacking Club</p>
+                </div>
             </div>
-            <div class="text-light-blue text-thin px-1 trigger:right-arrow z-1">
-                <span>Read More</span>
-                <img src="{% static 'acmsite/right_arrow.svg' %}" alt="Right Arrow" class="z--1" />
+        </a>
+        <a href="">
+            <div class="card">
+                <div class="card-image">
+                    <img alt="CS Makerspace Logo" src="{% static 'acmsite/makerspace_logo.png' %}" />
+                </div>
+                <div class="card-bottom">
+                    <p>CS Makerspace</p>
+                </div>
             </div>
+        </a>
+
+    </div>
+</section>
+
+<h1 class="mx-auto text-4xl text-center text-dark-blue mt-150px mb-40px">FEATURED EVENTS</h1>
+{% comment %} Makes list of events, will format later {% endcomment %}
+{% if event_list %}
+<div class="mx-256px">
+    {% for event in event_list %}
+    <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1">
+        <div class="text-orange mr-106px w-128px">
+            <p>{{event.date}}
+            <p>
         </div>
-        {% endfor %}
+        <div class="text-left text-dark-blue flex-grow-1">
+            <h3><a h ref="{% url 'detail' event.id %}">{{ event.name }}</a></h3>
+        </div>
+        <div class="text-light-blue text-thin">
+            <p>Read More</p>
+        </div>
     </div>
-    {% else %}
-    <div class="text-center w-100 px-2">
-        <p class="text-dark-blue text-semibold font-secondary">No events found</p>
+    {% endfor %}
+</div>
+{% else %}
+<div class="text-center w-100 px-2">
+    <p class="text-dark-blue text-semibold font-secondary">No events found</p>
+</div>
+{% endif %}
+
+<h1 class="mx-auto text-4xl text-center text-dark-blue mt-170px mb-30px">OFFICERS</h1>
+<div class="flex-row px-1 justify-center gap-2 w-100">
+    {% for position, first, last in officer_list %}
+    <div class="officer">
+        <div class="officer-body">
+            <h3 class="officer-name">
+                <p>{{first}}</p>
+                <p>{{last}}</p>
+            </h3>
+            <p class="officer-title">{{position}}</p>
+        </div>
+        <div class="officer-image">
+            <img alt={{position}} src="{% static 'acmsite/officer_placeholder.png' %}" />
+        </div>
     </div>
-    {% endif %}
-    
-    <h1 class="mx-auto text-center text-dark-blue">OFFICERS</h1>
-    <div class="flex-row px-1 justify-center gap-2 w-100">
-        {% for position, first, last in officer_list %}
-        <div class="officer">
-            <div class="officer-body">
-                <h3 class="officer-name">
-                    <p>{{first}}</p>
-                    <p>{{last}}</p>
-                </h3>
-                <p class="officer-title">{{position}}</p>
-            </div>
-            <div class="officer-image">
-                <img alt={{position}} src="{% static 'acmsite/officer_placeholder.png' %}" />
-            </div>
-        </div>  
-        {% endfor %}
-    </div> 
+    {% endfor %}
+</div>
 {% endblock %}
