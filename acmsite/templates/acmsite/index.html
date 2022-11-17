@@ -16,8 +16,10 @@
         <div id="video-holder"></div>
     </div>
 </div>
-<div class="mb-150px wl-arrow">
-    <!-- put arrow here -->
+<div class="mb-150px flex-row align-center justify-center">
+    <div class="wl-arrow">
+        <img src="{% static 'acmsite/stick_down_arrow.svg' %}" alt="orange down arrow">
+    </div>
 </div>
 <section class="text-center m-about">
     <h1 class="text-dark-blue text-4xl mb-40px">ABOUT</h1>
@@ -77,15 +79,13 @@
 </section>
 
 <h1 class="mx-auto text-4xl text-center text-dark-blue mt-150px mb-40px">FEATURED EVENTS</h1>
-{% comment %} Makes list of events, will format later {% endcomment %}
 {% if event_list %}
 <div class="mx-256px">
     {% for event in event_list %}   
     <a href="{% url 'detail' event.id %}">
         <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
             <div class="text-orange mr-106px w-128px">
-                <p>{{event.date}}
-                <p>
+                <p>{{event.date}}</p>
             </div>
             <div class="text-left text-dark-blue flex-grow-1">
                 <h3>{{ event.name }}</h3>
