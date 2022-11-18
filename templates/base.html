@@ -12,17 +12,19 @@
     <link rel="shortcut icon" type="image/png" href="{% static 'acmsite/favicon.png' %}"/>
   </head>
   
-  <body>
+  <body class='m-0'>
     <nav class="flex-row w-100 align-center fixed top-0 left-0 justify-between px-1 bg-default z-1">
       <div>
-        <h2 id="acm-logo">
-          <span class="text-orange">AUBURN</span>
-          <span class="text-blue"> ACM</span>
-        </h2>
+        <a href="/" class="no-link-behavior">
+          <h2 id="acm-logo">
+            <span class="text-orange">AUBURN</span>
+            <span class="text-blue"> ACM</span>
+          </h2>
+        </a>
       </div>
       <div>
         <ul class="flex-row gap-2 list-style-none font-secondary text-semibold text-lg">
-          <li><a class="text-dark-blue hover:fade-in-underline" href="">Home</a></li>
+          <li><a class="text-dark-blue hover:fade-in-underline" href="/">Home</a></li>
           <li>
             <div id="clubs-dropdown-wrapper">
               <div class="text-dark-blue hover:fade-in-underline flex-row align-center justify-center gap-0.5">
@@ -38,7 +40,7 @@
               </div>
             </div>
           </li>
-          <li><a class="text-dark-blue hover:fade-in-underline" href="">Events</a></li>
+          <li><a class="text-dark-blue hover:fade-in-underline" href="/events">Events</a></li>
           <li><a class="text-dark-blue hover:fade-in-underline" href="">Calendar</a></li>
         </ul>
       <div>
@@ -61,7 +63,7 @@
       </div>
     </div>
     {% comment %} TODO figure out semantic HTML tag for this {% endcomment %}
-    <div class="mt-5">
+    <div class="mt-8">
       {% block content %} {% endblock %}
     </div>
     <footer class="bg-dark-blue w-100 py-2 mt-5 relative bottom-0">
