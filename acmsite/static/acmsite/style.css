@@ -524,6 +524,11 @@ a {
     color: inherit;
 }
 
+.content-block {
+    margin-top: 8rem;
+    min-height: 60vh;
+}
+
 #club-down-arrow {
     width: 8px;
     height: 8px;
