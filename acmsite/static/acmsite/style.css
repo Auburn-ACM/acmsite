@@ -17,6 +17,10 @@ a {
     text-decoration: none;
 }
 
+button {
+    cursor: inherit;
+}
+
 /* DISPLAY */
 .absolute {
     position: absolute;
