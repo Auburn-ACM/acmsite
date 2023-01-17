@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from events.models import Event
-
+from random import randint
 # Create your views here.
 
 def index(request):
     # return HttpResponse('Hello World!')
     event_list = Event.objects.order_by('date')
+    image_num = randint(0, 35)
     context = {
         'event_list': event_list,
         'officer_list': (
@@ -13,8 +14,8 @@ def index(request):
             ('Vice President', 'First', 'Last'),
             ('Treasurer', 'First', 'Last'),
             ('Secretary', 'First', 'Last')
-        )
-
+        ),
+        'aubie_image': f'acmsite/aubie_photos/aubie_{image_num}.png',
     }
     return render(request, 'acmsite/index.html', context)
 

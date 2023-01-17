@@ -7,6 +7,7 @@
     --font-secondary: "inter", serif;
     font-family: var(--font-primary);
     background-color: var(--au-bg);
+    scroll-behavior: smooth;
 }
 
 * {
@@ -546,6 +547,13 @@ button {
     min-height: 60vh;
 }
 
+a.anchor {
+    display: block;
+    position: relative;
+    top: -7rem;
+    visibility: hidden;
+}
+
 .acm-button {
     background-color: var(--au-bg);
     color: var(--au-orange);
@@ -582,20 +590,18 @@ button {
     padding-right: 1rem;
 }
 
-#video-holder {
+#aubie-image-holder {
     background-color: lightgray;
     border: 2px solid darkgray;
     position: relative;
-    margin-left: 1rem;
-    margin-right: 1rem;
-    width: 100%;
+    /* margin-left: 1rem; */
+    /* margin-right: 1rem; */
+    max-height: 600px;
+    max-width: 600px;
 }
-
-#video-holder::after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-    z-index: -1;
+#aubie-image-holder img {
+    width: 100%;
+    height: 100%;
 }
 
 #clubs-dropdown {

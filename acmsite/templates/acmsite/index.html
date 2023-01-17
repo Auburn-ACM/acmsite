@@ -7,21 +7,26 @@
 <div class="flex-row m-top-content">
     <div class="w-50 m-descrip-video">
         <h1 class="text-very-bold text-dark-blue w-min-content text-3xl" id="big-auacm">AUBURN ACM</h1>
-        <p class="font-secondary text-light-blue">The Association for Computing Machinery (ACM) is a global
+        <p class="font-secondary text-light-blue text-lg">The Association for Computing Machinery (ACM) is a global
             scientific and educational organization dedicated to advancing the art, science, engineering, and
             application of computing, serving both professional and public interests by fostering the open exchange of
             information and by promoting the highest professional and ethical standards.</p>
     </div>
-    <div class="w-50 flex-row align-center justify-center mr-2">
-        <div id="video-holder"></div>
+    <div class="w-50 flex-col align-center justify-center">
+        <div id='aubie-image-holder'>
+            {% comment %} <img src="{{aubie_image}}" alt="Auburn ACM Logo" /> {% endcomment %}
+            <img src="{% static aubie_image %}" alt="AI Generated Image of Aubie"/>
+        </div>
+        <span class="text-light-blue text-bold text-sm">Stable Diffusion 2.1, "Auburn University's Mascot" </span>
     </div>
 </div>
 <div class="mb-150px flex-row align-center justify-center">
-    <div class="wl-arrow">
+    <a href="/#about"><div class="wl-arrow">
         <img src="{% static 'acmsite/stick_down_arrow.svg' %}" alt="orange down arrow">
-    </div>
+    </div></a>
 </div>
 <section class="text-center m-about">
+    <a class="anchor" id="about"></a>
     <h1 class="text-dark-blue text-4xl mb-40px">ABOUT</h1>
     <p class="font-secondary text-light-blue mb-30px">ACM’s broad‐based infrastructure supports more than 860
         professional and
@@ -41,7 +46,8 @@
         monthly Tech Talks. These events allow students to explore computer science further and give insight to the
         opportunities that are available to students during college and beyond.</p>
 </section>
-<section class="mx-1 text-center" id="clubs">
+<section class="mx-1 text-center">
+    <a class="anchor" id="clubs"></a>
     <h1 class="text-dark-blue text-4xl mb-40px">CLUBS</h1>
     <div class="flex-row align-start justify-center gap-1 w-100">
         <a href="/clubs/CPT">
