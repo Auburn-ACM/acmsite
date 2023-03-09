@@ -1,4 +1,4 @@
-{% extends "./base.html" %}
+{% extends "base.html" %}
 {% load static %}
 
 {% block title %}Auburn ACM{% endblock %}
@@ -7,19 +7,26 @@
 <div class="flex-row m-top-content">
     <div class="w-50 m-descrip-video">
         <h1 class="text-very-bold text-dark-blue w-min-content text-3xl" id="big-auacm">AUBURN ACM</h1>
-        <p class="font-secondary text-light-blue">The Association for Computing Machinery (ACM) is a global
+        <p class="font-secondary text-light-blue text-lg">The Association for Computing Machinery (ACM) is a global
             scientific and educational organization dedicated to advancing the art, science, engineering, and
             application of computing, serving both professional and public interests by fostering the open exchange of
             information and by promoting the highest professional and ethical standards.</p>
     </div>
-    <div class="w-50 flex-row align-center justify-center mr-2">
-        <div id="video-holder"></div>
+    <div class="w-50 flex-col align-center justify-center">
+        <div id='aubie-image-holder'>
+            {% comment %} <img src="{{aubie_image}}" alt="Auburn ACM Logo" /> {% endcomment %}
+            <img src="{% static aubie_image %}" alt="AI Generated Image of Aubie"/>
+        </div>
+        <span class="text-light-blue text-bold text-sm">Stable Diffusion 2.1, "Auburn University's Mascot" </span>
     </div>
 </div>
-<div class="mb-150px wl-arrow">
-    <!-- put arrow here -->
+<div class="mb-150px flex-row align-center justify-center">
+    <a href="/#about"><div class="wl-arrow">
+        <img src="{% static 'acmsite/stick_down_arrow.svg' %}" alt="orange down arrow">
+    </div></a>
 </div>
 <section class="text-center m-about">
+    <a class="anchor" id="about"></a>
     <h1 class="text-dark-blue text-4xl mb-40px">ABOUT</h1>
     <p class="font-secondary text-light-blue mb-30px">ACM’s broad‐based infrastructure supports more than 860
         professional and
@@ -40,9 +47,10 @@
         opportunities that are available to students during college and beyond.</p>
 </section>
 <section class="mx-1 text-center">
+    <a class="anchor" id="clubs"></a>
     <h1 class="text-dark-blue text-4xl mb-40px">CLUBS</h1>
     <div class="flex-row align-start justify-center gap-1 w-100">
-        <a href="">
+        <a href="/clubs/CPT">
             <div class="card">
                 <div class="card-image">
                     <img alt="CPT Logo" src="{% static 'acmsite/cpt_leetcode_logo.png' %}" />
@@ -52,7 +60,7 @@
                 </div>
             </div>
         </a>
-        <a href="">
+        <a href="/clubs/EHC">
             <div class="card">
                 <div class="card-image">
                     <img alt="EHC Logo" src="{% static 'acmsite/ehc_logo.png' %}" />
@@ -62,7 +70,7 @@
                 </div>
             </div>
         </a>
-        <a href="">
+        <a href="/clubs/makerspace">
             <div class="card">
                 <div class="card-image">
                     <img alt="CS Makerspace Logo" src="{% static 'acmsite/makerspace_logo.png' %}" />
@@ -77,22 +85,24 @@
 </section>
 
 <h1 class="mx-auto text-4xl text-center text-dark-blue mt-150px mb-40px">FEATURED EVENTS</h1>
-{% comment %} Makes list of events, will format later {% endcomment %}
 {% if event_list %}
 <div class="mx-256px">
-    {% for event in event_list %}
-    <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1">
-        <div class="text-orange mr-106px w-128px">
-            <p>{{event.date}}
-            <p>
+    {% for event in event_list %}   
+    <a href="{% url 'detail' event.id %}">
+        <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
+            <div class="text-orange mr-106px w-128px">
+                <p>{{event.date}}</p>
+            </div>
+            <div class="text-left text-dark-blue flex-grow-1">
+                <h3>{{ event.name }}</h3>
+            </div>
+            <div class="text-light-blue text-thin trigger:right-arrow">
+                <span class='p-0'>Read More</span>
+                <img class="trigger:show opacity-0 relative left-10px" src="{% static 'acmsite/right_arrow.svg' %}" alt="right arrow" />
+            </div>
         </div>
-        <div class="text-left text-dark-blue flex-grow-1">
-            <h3><a h ref="{% url 'detail' event.id %}">{{ event.name }}</a></h3>
-        </div>
-        <div class="text-light-blue text-thin">
-            <p>Read More</p>
-        </div>
-    </div>
+    </a>
+
     {% endfor %}
 </div>
 {% else %}

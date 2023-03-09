@@ -19,6 +19,9 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
+    path('clubs/CPT', views.CPT, name='CPT'),
+    path('clubs/EHC', views.EHC, name='EHC'),
+    path('clubs/makerspace', views.makerspace, name='makerspace'),
     path('events/', include('events.urls')),
     path('admin/', admin.site.urls),
 ]

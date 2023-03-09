@@ -7,6 +7,7 @@
     --font-secondary: "inter", serif;
     font-family: var(--font-primary);
     background-color: var(--au-bg);
+    scroll-behavior: smooth;
 }
 
 * {
@@ -15,6 +16,10 @@
 
 a {
     text-decoration: none;
+}
+
+button {
+    cursor: inherit;
 }
 
 /* DISPLAY */
@@ -161,8 +166,16 @@ a {
     align-items: flex-start;
 }
 
+.self-flex-start {
+    align-self: flex-start;
+}
+
 .flex-grow-1 {
     flex-grow: 1;
+}
+
+.gap-0\.5 {
+    gap: 0.5rem;
 }
 
 .gap-1 {
@@ -190,15 +203,28 @@ a {
     bottom: 0;
 }
 
+.left-10px {
+    left: 10px;
+}
+
 /* MARGIN CLASSES */
+.m-0 {
+    margin: 0;
+}
+
 .mx-1 {
     margin-left: 1rem;
     margin-right: 1rem;
 }
 
 .px-2 {
-    margin-left: 2rem;
-    margin-right: 2rem;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+.px-3 {
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 .mx-auto {
@@ -216,8 +242,16 @@ a {
     margin-bottom: 1rem;
 }
 
+.mt-0 {
+    margin-top: 0;
+}
+
 .mt-5 {
     margin-top: 5rem;
+}
+
+.mt-8 {
+    margin-top: 8rem;
 }
 
 .ml-1 {
@@ -288,14 +322,26 @@ a {
     padding-left: 1rem;
     padding-right: 1rem;
 }
-
+.p-0\.5 {
+    padding: 0.5rem;
+}
 .p-0\.25 {
     padding: 0.25rem !important;
 }
+.p-0 {
+    padding: 0;
+}
 
+.py-1 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
 .py-2 {
     padding-top: 2rem;
     padding-bottom: 2rem;
+}
+.pr-0\.25 {
+    padding-right: 0.25rem;
 }
 
 /* LENGHT AND WIDTH */
@@ -329,8 +375,16 @@ a {
 }
 
 /* BORDER CLASSES */
+.border-none {
+    border: none;
+}
+
 .border-1 {
     border: 1px solid black;
+}
+
+.border-2 {
+    border: 2px solid black;
 }
 
 .border-bottom-1 {
@@ -353,19 +407,23 @@ a {
     z-index: -1;
 }
 
+.opacity-0 {
+    opacity: 0;
+}
+
 /* INDIVIDUAL ELEMENTS */
 .card {
     background-color: black;
     border-radius: 1rem;
     margin-left: 1rem;
     margin-right: 1rem;
-    width: 10rem;
+    width: 15rem;
 }
 
 .card .card-image {
     padding: 0.5rem;
     width: 100%;
-    height: 10rem;
+    height: 15rem;
     border-radius: 1rem;
     transition: all 0.2s ease-out;
 }
@@ -458,6 +516,7 @@ a {
     top: 7rem;
     right: 0;
     z-index: 100;
+    margin-right: 12px;
 }
 
 .sidebar-button {
@@ -474,26 +533,88 @@ a {
     height: 100%;
 }
 
+.uppercase {
+    text-transform: uppercase;
+}
+
+.no-link-behavior {
+    text-decoration: none;
+    color: inherit;
+}
+
+.content-block {
+    margin-top: 8rem;
+    min-height: 60vh;
+}
+
+a.anchor {
+    display: block;
+    position: relative;
+    top: -7rem;
+    visibility: hidden;
+}
+
+.acm-button {
+    background-color: var(--au-bg);
+    color: var(--au-orange);
+    border: 2px solid var(--au-orange);
+    border-radius: 0.5rem;
+}
+.acm-button:hover {
+    background-color: var(--au-orange);
+    color: var(--au-bg);
+}
+.acm-button p {
+    margin: 0;
+    padding: 12px 24px;
+    font-family: var(--font-secondary);
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+#club-down-arrow {
+    width: 8px;
+    height: 8px;
+}
+
 #big-auacm {
     font-size: 7vw;
     line-height: 1em;
 }
 
-#video-holder {
+#acm-logo {
+    font-size: 40px;
+    font-weight: 900;
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+#aubie-image-holder {
     background-color: lightgray;
     border: 2px solid darkgray;
     position: relative;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    /* margin-left: 1rem; */
+    /* margin-right: 1rem; */
+    max-height: 600px;
+    max-width: 600px;
+}
+#aubie-image-holder img {
     width: 100%;
+    height: 100%;
 }
 
-#video-holder::after {
-    content: "";
-    display: block;
-    padding-bottom: 100%;
-    z-index: -1;
+#clubs-dropdown {
+    position: absolute;
+    z-index: 100;
+    background-color: var(--au-bg);
+    opacity: 0.9;
+    display: none;
 }
+#clubs-dropdown-wrapper:hover #clubs-dropdown {
+    display: block;
+}
+
 
 /* Animations */
 .hover\:fade-in-underline {
@@ -504,6 +625,7 @@ a {
     border-bottom: 3px solid var(--au-dark-blue);
 }
 .hover\:trigger {
+    transition: all 0.2s ease-out;
 }
 .hover\:trigger .trigger\:right-arrow{
     transition: all 0.2s ease-out;
@@ -512,6 +634,9 @@ a {
 .hover\:trigger:hover .trigger\:right-arrow{
     transform: translatex(-0.5rem);
 }
-.hover\:trigger:hover .trigger\:right-arrow p::after{
-    /* content: " >"; */
+.hover\:trigger:hover .trigger\:show {
+    transition: all 0.2s ease-out;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
 }
