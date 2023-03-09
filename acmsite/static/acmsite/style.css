@@ -300,12 +300,49 @@ button {
 
 .m-descrip-video {
     margin-right: 4.6875rem;
+    flex-grow: 1;
 }
 
-.m-top-content {
+@media screen and (max-width: 768px) {
+    .m-descrip-video {
+        margin-right: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .m-top-content {
+        margin-right: 1rem;
+        margin-left: 1rem;
+        margin-bottom: 1rem;
+    }
+}
+
+.desktop-intro {
+    display: flex;
+    flex-direction: row;
     margin-right: 7.1875rem;
     margin-left: 7.1875rem;
     margin-bottom: 7.3125rem;
+}
+@media screen and (max-width: 768px) {
+    .desktop-intro {
+        display: none;
+    }
+}
+
+.mobile-intro {
+    width: 100%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+}
+@media screen and (max-width: 768px) {
+    .mobile-intro {
+        display: flex;
+    }
 }
 
 .m-about {
@@ -412,13 +449,30 @@ button {
 }
 
 /* INDIVIDUAL ELEMENTS */
+.card-holder {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+
 .card {
     background-color: black;
     border-radius: 1rem;
-    margin-left: 1rem;
-    margin-right: 1rem;
+    margin: 1rem;
     width: 15rem;
 }
+
+@media screen and (max-width: 768px) {
+    .card {
+        width: 10rem;
+    }
+}
+
 
 .card .card-image {
     padding: 0.5rem;
@@ -426,6 +480,12 @@ button {
     height: 15rem;
     border-radius: 1rem;
     transition: all 0.2s ease-out;
+}
+
+@media screen and (max-width: 768px) {
+    .card .card-image {
+        height: 10rem;
+    }
 }
 
 .card img {
@@ -518,6 +578,11 @@ button {
     z-index: 100;
     margin-right: 12px;
 }
+@media screen and (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+}
 
 .sidebar-button {
     background-color: var(--au-orange);
@@ -547,11 +612,76 @@ button {
     min-height: 60vh;
 }
 
+@media screen and (max-width: 768px) {
+    .content-block {
+        margin-top: 8rem;
+    }
+}
+
+
 a.anchor {
     display: block;
     position: relative;
     top: -7rem;
     visibility: hidden;
+}
+
+nav.navigation {
+    display: flex;
+    position: fixed;
+    /* width: 100%; */
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background-color: var(--au-bg);
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+nav.navigation .nav-items {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-weight: 600;
+    font-family: var(--font-secondary);
+    font-size: 1.125rem;
+}
+nav.navigation .nav-dropdown {
+    display: none;
+}
+nav.navigation .nav-dropdown .nav-dropdown-button {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-family: var(--font-secondary);
+    font-size: 1.125rem;
+}
+nav.navigation .nav-dropdown .nav-dropdown-button img {
+    width: 1.5rem;
+    height: 1.5rem;
+}
+
+
+nav.navigation .nav-dropdown .nav-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 3.5rem;
+    right: 0;
+    background-color: var(--au-bg);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.25);
+}
+
+@media screen and (max-width: 768px) {
+    nav.navigation .nav-items {
+        display: none;
+    }
+    nav.navigation .nav-dropdown {
+        display: block;
+    }
 }
 
 .acm-button {
@@ -578,16 +708,42 @@ a.anchor {
     height: 8px;
 }
 
-#big-auacm {
+.big-auacm {
     font-size: 7vw;
     line-height: 1em;
+    flex-grow: 1;
 }
+@media screen and (max-width: 768px) {
+    .big-auacm {
+        font-size: 10vw;
+    }
+}
+
+.aubie-image-label {
+    font-size: 0.875rem;
+    font-weight: 700;
+    color: var(--au-light-blue);
+    text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+    .aubie-image-label {
+        font-size: 0.75rem;
+    }
+}
+
 
 #acm-logo {
     font-size: 40px;
     font-weight: 900;
     padding-left: 1rem;
     padding-right: 1rem;
+}
+@media screen and (max-width: 768px) {
+    #acm-logo {
+        font-size: 24px;
+        padding: 0 0.25rem;
+    }
 }
 
 #aubie-image-holder {
@@ -599,6 +755,8 @@ a.anchor {
     max-height: 600px;
     max-width: 600px;
 }
+
+
 #aubie-image-holder img {
     width: 100%;
     height: 100%;
