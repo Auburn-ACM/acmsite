@@ -331,7 +331,6 @@ button {
 }
 
 .mobile-intro {
-    width: 100%;
     display: none;
     flex-direction: column;
     align-items: center;
@@ -342,6 +341,32 @@ button {
 @media screen and (max-width: 768px) {
     .mobile-intro {
         display: flex;
+    }
+}
+
+.section-title {
+    color: var(--au-dark-blue);
+    font-size: 4rem;
+    margin-bottom: 2.5rem;
+}
+
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 2.5rem;
+        margin-bottom: 1.25rem;
+    }
+}
+/* mx-auto text-4xl text-center text-dark-blue mt-150px mb-40px  */
+.main-section {
+    margin: 150px 8.5rem;
+    text-align: center;
+    color: var(--au-dark-blue);
+
+}
+
+@media screen and (max-width: 768px) {
+    .main-section {
+        margin: 50px 1rem;
     }
 }
 
@@ -402,8 +427,19 @@ button {
     width: max-content;
 }
 
+.down-arrow-div {
+    margin: 0 auto;
+    margin-bottom: 150px;
+}
+
+@media screen and (max-width: 768px) {
+    .down-arrow-div {
+        margin-bottom: 50px;
+    }
+}
+    
 .wl-arrow {
-    width: 4.6875rem;
+    /* width: 4.6875rem; */
     height: 1.875rem;
 }
 
@@ -458,21 +494,12 @@ button {
     width: 100%;
 }
 
-
-
 .card {
     background-color: black;
     border-radius: 1rem;
     margin: 1rem;
     width: 15rem;
 }
-
-@media screen and (max-width: 768px) {
-    .card {
-        width: 10rem;
-    }
-}
-
 
 .card .card-image {
     padding: 0.5rem;
@@ -482,11 +509,6 @@ button {
     transition: all 0.2s ease-out;
 }
 
-@media screen and (max-width: 768px) {
-    .card .card-image {
-        height: 10rem;
-    }
-}
 
 .card img {
     width: 100%;
@@ -516,6 +538,29 @@ button {
     align-items: center;
 }
 
+@media screen and (max-width: 768px) {
+    .card {
+        width: 8rem;
+    }
+
+    .card .card-image {
+        height: 8rem;
+    }
+    .card p {
+        font-size: 1rem;
+    }
+}
+
+.officers-holder{
+    display: flex;
+    flex-direction: row;
+    padding: 0 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 1rem;
+}
+
 .officer {
     display: flex;
     align-items: center;
@@ -528,6 +573,12 @@ button {
 
 .officer p {
     line-height: 0.25rem;
+}
+
+@media screen and (max-width: 768px) {
+    .officer {
+        font-size: 0.75rem;
+    }
 }
 
 .officer .officer-body {
@@ -548,7 +599,7 @@ button {
 
 .officer .officer-image {
     width: 100%;
-    height: 100%;
+    height: auto;
     position: absolute;
     transition: all 0.2s ease-out;
 }
@@ -614,7 +665,7 @@ button {
 
 @media screen and (max-width: 768px) {
     .content-block {
-        margin-top: 8rem;
+        margin-top: 5rem;
     }
 }
 
@@ -629,7 +680,7 @@ a.anchor {
 nav.navigation {
     display: flex;
     position: fixed;
-    /* width: 100%; */
+    width: 100%;
     top: 0;
     left: 0;
     z-index: 1;
@@ -649,6 +700,7 @@ nav.navigation .nav-items {
 }
 nav.navigation .nav-dropdown {
     display: none;
+    margin: 0 1rem;
 }
 nav.navigation .nav-dropdown .nav-dropdown-button {
     display: flex;
@@ -659,8 +711,8 @@ nav.navigation .nav-dropdown .nav-dropdown-button {
     font-size: 1.125rem;
 }
 nav.navigation .nav-dropdown .nav-dropdown-button img {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 
@@ -715,7 +767,7 @@ nav.navigation .nav-dropdown .nav-dropdown-content {
 }
 @media screen and (max-width: 768px) {
     .big-auacm {
-        font-size: 10vw;
+        font-size: 9.5vw;
     }
 }
 
@@ -746,11 +798,32 @@ nav.navigation .nav-dropdown .nav-dropdown-content {
     }
 }
 
+.events-holder {
+    margin: 0 256px;
+    font-size: 1rem;
+}
+.events-holder .event-date {
+    color: var(--au-orange);
+    margin-right: 106px;
+    width: 128px;
+}
+
+@media screen and (max-width: 768px) {
+    .events-holder {
+        margin: 0 1rem;
+        font-size: 0.7rem;
+    }
+    .events-holder .event-date {
+        margin-right: 0.5rem;
+        width: 20vw;
+    }
+}
+    
 #aubie-image-holder {
     background-color: lightgray;
     border: 2px solid darkgray;
     position: relative;
-    /* margin-left: 1rem; */
+    margin-left: 1rem;
     /* margin-right: 1rem; */
     max-height: 600px;
     max-width: 600px;

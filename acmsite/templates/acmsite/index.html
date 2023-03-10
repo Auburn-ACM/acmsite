@@ -25,12 +25,13 @@
 <div class="mobile-intro">
     <div class="flex-row justify-between">
         <h1 class="text-very-bold text-dark-blue w-min-content big-auacm">AUBURN ACM</h1>
-        <div class="w-50 flex-col align-center justify-center flex-grow-1">
+        <div class="flex-col align-center justify-center flex-grow-1">
             <div id='aubie-image-holder'>
                 <img src="{% static aubie_image %}" alt="AI Generated Image of Aubie"/>
             </div>
             <span class="aubie-image-label">
-                <p><a href="https://huggingface.co/stabilityai/stable-diffusion-2-1">Stable Diffusion 2.1</a></p>
+                <span><a href="https://huggingface.co/stabilityai/stable-diffusion-2-1">Stable Diffusion 2.1</a></span>
+                <br>
                 <span>"Auburn University's Mascot"</span>
             </span>
         </div>
@@ -44,14 +45,14 @@
     
 </div>
 
-<div class="mb-150px flex-row align-center justify-center">
+<div class="down-arrow-div flex-row align-center justify-center">
     <a href="/#about"><div class="wl-arrow">
         <img src="{% static 'acmsite/stick_down_arrow.svg' %}" alt="orange down arrow">
     </div></a>
 </div>
-<section class="text-center m-about">
+<section class="main-section">
     <a class="anchor" id="about"></a>
-    <h1 class="text-dark-blue text-4xl mb-40px">ABOUT</h1>
+    <h1 class="section-title">ABOUT</h1>
     <p class="font-secondary text-light-blue mb-30px">ACM’s broad‐based infrastructure supports more than 860
         professional and
         student chapters worldwide. These "local neighborhoods" offer opportunities for members to gain access to
@@ -65,14 +66,14 @@
         not receive through their coursework alone.</p>
 
     <h2 class="text-dark-blue text-lg mb-15px">EVENTS</h2>
-    <p class="font-secondary text-light-blue mb-150px">Auburn ACM also hosts events, including its annual Auburn
+    <p class="font-secondary text-light-blue">Auburn ACM also hosts events, including its annual Auburn
         Hackathon and
         monthly Tech Talks. These events allow students to explore computer science further and give insight to the
         opportunities that are available to students during college and beyond.</p>
 </section>
-<section class="mx-1 text-center">
+<section class="main-section">
     <a class="anchor" id="clubs"></a>
-    <h1 class="text-dark-blue text-4xl mb-40px">CLUBS</h1>
+    <h1 class="section-title">CLUBS</h1>
     {% comment %} <div class="flex-row align-start justify-center gap-1 w-100"> {% endcomment %}
     <div class="card-holder">
         <a href="/clubs/CPT">
@@ -109,48 +110,52 @@
     </div>
 </section>
 
-<h1 class="mx-auto text-4xl text-center text-dark-blue mt-150px mb-40px">FEATURED EVENTS</h1>
-{% if event_list %}
-<div class="mx-256px">
-    {% for event in event_list %}   
-    <a href="{% url 'detail' event.id %}">
-        <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
-            <div class="text-orange mr-106px w-128px">
-                <p>{{event.date}}</p>
+<section class="main-section">
+    <h1 class="section-title">FEATURED EVENTS</h1>
+    {% if event_list %}
+    <div class="events-holder">
+        {% for event in event_list %}   
+        <a href="{% url 'detail' event.id %}">
+            <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
+                <div class="event-date">
+                    <p>{{event.date}}</p>
+                </div>
+                <div class="text-left text-dark-blue flex-grow-1">
+                    <h3>{{ event.name }}</h3>
+                </div>
+                <div class="text-light-blue text-thin trigger:right-arrow">
+                    <span class='p-0'>Read More</span>
+                    <img class="trigger:show opacity-0 relative left-10px" src="{% static 'acmsite/right_arrow.svg' %}" alt="right arrow" />
+                </div>
             </div>
-            <div class="text-left text-dark-blue flex-grow-1">
-                <h3>{{ event.name }}</h3>
-            </div>
-            <div class="text-light-blue text-thin trigger:right-arrow">
-                <span class='p-0'>Read More</span>
-                <img class="trigger:show opacity-0 relative left-10px" src="{% static 'acmsite/right_arrow.svg' %}" alt="right arrow" />
-            </div>
-        </div>
-    </a>
-
-    {% endfor %}
-</div>
-{% else %}
-<div class="text-center w-100 px-2">
-    <p class="text-dark-blue text-semibold font-secondary">No events found</p>
-</div>
-{% endif %}
-
-<h1 class="mx-auto text-4xl text-center text-dark-blue mt-170px mb-30px">OFFICERS</h1>
-<div class="flex-row px-1 justify-center gap-2 w-100">
-    {% for position, first, last in officer_list %}
-    <div class="officer">
-        <div class="officer-body">
-            <h3 class="officer-name">
-                <p>{{first}}</p>
-                <p>{{last}}</p>
-            </h3>
-            <p class="officer-title">{{position}}</p>
-        </div>
-        <div class="officer-image">
-            <img alt={{position}} src="{% static 'acmsite/officer_placeholder.png' %}" />
-        </div>
+        </a>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
+    {% else %}
+    <div class="text-center w-100 px-2">
+        <p class="text-dark-blue text-semibold font-secondary">No events found</p>
+    </div>
+    {% endif %}
+</section>
+
+<section class="main-section">
+    {% comment %} <h1 class="mx-auto text-4xl text-center text-dark-blue mt-170px mb-30px">OFFICERS</h1> {% endcomment %}
+    <h1 class="section-title">OFFICERS</h1>
+    <div class="officers-holder">
+        {% for position, first, last in officer_list %}
+        <div class="officer">
+            <div class="officer-body">
+                <h3 class="officer-name">
+                    <p>{{first}}</p>
+                    <p>{{last}}</p>
+                </h3>
+                <p class="officer-title">{{position}}</p>
+            </div>
+            <div class="officer-image">
+                <img alt={{position}} src="{% static 'acmsite/officer_placeholder.png' %}" />
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}
