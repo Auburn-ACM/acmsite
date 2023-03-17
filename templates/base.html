@@ -40,20 +40,29 @@
           </div>
         </li>
         <li><a class="text-dark-blue hover:fade-in-underline" href="/events">Events</a></li>
-        <li><a class="text-dark-blue hover:fade-in-underline" href="">Calendar</a></li>
+        {% comment %} <li><a class="text-dark-blue hover:fade-in-underline" href="">Calendar</a></li> {% endcomment %}
       </ul>
       <div class="nav-dropdown">
-        <div class="nav-dropdown-button">
-          <img src="{% static 'acmsite/menu.svg' %}" alt="menu" />
+        <div id="menu-btn">
+          <input type="checkbox" id="checkbox2" class="checkbox2
+              visuallyHidden" onclick="showMenu()">
+          <label for="checkbox2">
+              <div class="hamburger hamburger2">
+                  <span class="bar bar1"></span>
+                  <span class="bar bar2"></span>
+                  <span class="bar bar3"></span>
+                  <span class="bar bar4"></span>
+              </div>
+          </label>
         </div>
-        <div class="nav-dropdown-content">
+        <div id="nav-dropdown-content">
           <ul class="flex-col gap-1 list-style-none font-secondary text-semibold text-base p-0.5">
             <li><a class="text-dark-blue hover:fade-in-underline" href="/">Home</a></li>
             <li><a class="text-dark-blue hover:fade-in-underline" href="/clubs/CPT">Competitive Programming Team</a></li>
             <li><a class="text-dark-blue hover:fade-in-underline" href="/clubs/EHC">Ethical Hacking Club</a></li>
             <li><a class="text-dark-blue hover:fade-in-underline" href="/clubs/makerspace">CS Makerspace</a></li>
             <li><a class="text-dark-blue hover:fade-in-underline" href="/events">Events</a></li>
-            <li><a class="text-dark-blue hover:fade-in-underline" href="">Calendar</a></li>
+            {% comment %} <li><a class="text-dark-blue hover:fade-in-underline" href="">Calendar</a></li> {% endcomment %}
           </ul>
         </div>
       </div>
@@ -90,7 +99,8 @@
       {% block content %} {% endblock %}
     </div>
     <footer class="bg-dark-blue w-100 py-2 mt-5 bottom-0 relative">
-      <div class="flex-row gap-2 align-center justify-center w-100">
+      {% comment %} <div class="flex-row gap-2 align-center justify-center w-100"> {% endcomment %}
+      <div class="footer">
         <div class="sidebar-button">
           <a href="https://aub.ie/acm-discord" target="_blank">
             <img src="{% static 'acmsite/discord.svg' %}" alt="discord" />
@@ -120,4 +130,5 @@
       <p class="font-secondary text-white text-center">Copyright @ ACM at Auburn University 2022</p>
     </footer>
   </body>
+  <script src="{% static 'acmsite/main.js'%}"></script>
 </html>
