@@ -186,6 +186,10 @@ button {
     gap: 2rem;
 }
 
+.wrap {
+    flex-wrap: wrap;
+}
+
 /* POSITIONING CLASSES */
 .top-0 {
     top: 0;
@@ -780,6 +784,13 @@ nav.navigation .nav-dropdown {
     text-align: center;
 }
 
+@media screen and (max-width: 768px) {
+    .acm-button p {
+        font-size: 16px;
+        padding: 8px;
+    }
+}
+
 #club-down-arrow {
     width: 8px;
     height: 8px;
@@ -964,3 +975,64 @@ nav.navigation .nav-dropdown {
     bottom: 0;
 }
 
+.club-page-name {
+    color: var(--au-dark-blue);
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    margin: 0;
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 768px) {
+    .club-page-name {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+    }
+}
+
+.club-body {
+    width: 50%;
+    font-size: 1.125rem;
+}
+
+@media screen and (max-width: 768px) {
+    .club-body {
+        width: 100%;
+        font-size: 0.875rem;
+    }
+}
+    
+.club-officer-holder {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+}
+
+.events-body {
+    margin: 0 256px;
+    margin-bottom: 70px;
+}
+
+@media screen and (max-width: 768px) {
+    .events-body {
+        margin: 0 1rem;
+        margin-bottom: 70px;
+    }
+}
+.event-detail-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+@media screen and (max-width: 768px) {
+    .event-detail-wrapper {
+        padding: 0 1rem;
+    }
+}

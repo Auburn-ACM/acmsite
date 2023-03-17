@@ -4,17 +4,17 @@
 {% block content %}
 <div class="w-100 flex-col align-center px-3">
     <div class='self-flex-start w-100'>
-        <a href='/#clubs' class='no-link-behavior'><p> < Back </p></a>
+        <a href='/#clubs' class='no-link-behavior'><p> &larr; Back </p></a>
     </div>
     <div class="flex-col align-center text-center w-100">
-        <h1 class="text-dark-blue text-4xl uppercase m-0 mb-40px">{{name}}</h1>
+        <h1 class="club-page-name">{{name}}</h1>
     </div>
-    <div class="w-50 text-lg">
+    <div class="club-body">
         <p><span class='text-bold'> When? </span> {{when}}</p>
         <p><span class='text-bold'> Where? </span> {{where}}</p>
         <p><span class='text-bold'> What? </span> {{what}}</p>
         <p class='text-bold'> Important Links:</p>
-        <div class='flex-row gap-1'>
+        <div class='flex-row gap-1 wrap'>
             {% if links.website %}
                 <a href={{links.website}}><button type="button" class='acm-button'><p>Website</p></button></a>
             {% endif %}
@@ -30,21 +30,21 @@
         </div>
     </div>
     <h1 class="mx-auto text-4xl text-center text-dark-blue mb-30px">OFFICERS</h1>
-    <div class="flex-row px-1 justify-center gap-2 w-100">
-    {% for position, first, last in officer_list %}
-    <div class="officer">
-        <div class="officer-body">
-            <h3 class="officer-name">
-                <p>{{first}}</p>
-                <p>{{last}}</p>
-            </h3>
-            <p class="officer-title">{{position}}</p>
+    <div class="club-officer-holder">
+        {% for position, first, last in officer_list %}
+        <div class="officer">
+            <div class="officer-body">
+                <h3 class="officer-name">
+                    <p>{{first}}</p>
+                    <p>{{last}}</p>
+                </h3>
+                <p class="officer-title">{{position}}</p>
+            </div>
+            <div class="officer-image">
+                <img alt={{position}} src="{% static 'acmsite/officer_placeholder.png' %}" />
+            </div>
         </div>
-        <div class="officer-image">
-            <img alt={{position}} src="{% static 'acmsite/officer_placeholder.png' %}" />
-        </div>
+        {% endfor %}
     </div>
-    {% endfor %}
-</div>
 </div>
 {% endblock %}

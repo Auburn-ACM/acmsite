@@ -4,56 +4,61 @@
 
 {% block content %}
     <div class="flex-col align-center text-center w-100">
-        <h1 class="text-dark-blue text-4xl m-0 mb-40px">EVENTS</h1>
+        <h1 class="club-page-name">EVENTS</h1>
     </div>
-    <div class="mx-256px mb-70px">
-        <div class="flex-col align-center text-center w-100">
-            <h2 class="text-dark-blue text-2xl mt-0 mb-15px ">UPCOMING</h2>
-        </div>
-        {% if upcoming_event_list %}
-        {% for event in upcoming_event_list %}
-        <a href="{% url 'detail' event.id %}">
-            <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
-                <div class="text-orange mr-106px w-128px">
-                    <p>{{event.date}}</p>
-                </div>
-                <div class="text-left text-dark-blue flex-grow-1">
-                    <h3>{{ event.name }}</h3>
-                </div>
-                <div class="text-light-blue text-thin trigger:right-arrow">
-                    <span class='p-0'>Read More</span>
-                    <img class="trigger:show opacity-0 relative left-10px" src="{% static 'acmsite/right_arrow.svg' %}" alt="right arrow" />
-                </div>
+    <div class="events-body">
+        <div class="mb-40px">
+            <div class="flex-col align-center text-center w-100">
+                <h2 class="text-dark-blue text-2xl mt-0 mb-15px ">UPCOMING</h2>
             </div>
-        </a>
-        {% endfor %}
-        {% else %}
-        <div class="flex-col align-center text-center w-100">
-            <p class="text-dark-blue text-lg m-0">No upcoming events yet, check back later!</p>
+            {% if upcoming_event_list %}
+            <div class="events-holder">
+                {% for event in upcoming_event_list %}
+                <a href="{% url 'detail' event.id %}">
+                    <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
+                        <div class="event-date">
+                            <p>{{event.date}}</p>
+                        </div>
+                        <div class="text-left text-dark-blue flex-grow-1">
+                            <h3>{{ event.name }}</h3>
+                        </div>
+                        <div class="text-light-blue text-thin trigger:right-arrow">
+                            <span class='p-0'>Read More</span>
+                            <img class="trigger:show opacity-0 relative left-10px" src="{% static 'acmsite/right_arrow.svg' %}" alt="right arrow" />
+                        </div>
+                    </div>
+                </a>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="flex-col align-center text-center w-100">
+                <p class="text-dark-blue text-lg m-0">No upcoming events yet, check back later!</p>
+            </div>
+            {% endif %}
         </div>
-        {% endif %}
-    </div>
-    <div class="mx-256px mb-40px">
+        
         <div class="flex-col align-center text-center w-100">
             <h2 class="text-dark-blue text-2xl mt-0 mb-15px ">PAST</h2>
         </div>
         {% if past_event_list %}
-        {% for event in past_event_list %}
-        <a href="{% url 'detail' event.id %}">
-            <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
-                <div class="text-orange mr-106px w-128px">
-                    <p>{{event.date}}</p>
+        <div class="events-holder">
+            {% for event in past_event_list %}
+            <a href="{% url 'detail' event.id %}">
+                <div class="flex-row justify-between align-center font-secondary text-semibold border-bottom-1 hover:trigger">
+                    <div class="event-date">
+                        <p>{{event.date}}</p>
+                    </div>
+                    <div class="text-left text-dark-blue flex-grow-1">
+                        <h3>{{ event.name }}</h3>
+                    </div>
+                    <div class="text-light-blue text-thin trigger:right-arrow">
+                        <span class='p-0'>Read More</span>
+                        <img class="trigger:show opacity-0 relative left-10px" src="{% static 'acmsite/right_arrow.svg' %}" alt="right arrow" />
+                    </div>
                 </div>
-                <div class="text-left text-dark-blue flex-grow-1">
-                    <h3>{{ event.name }}</h3>
-                </div>
-                <div class="text-light-blue text-thin trigger:right-arrow">
-                    <span class='p-0'>Read More</span>
-                    <img class="trigger:show opacity-0 relative left-10px" src="{% static 'acmsite/right_arrow.svg' %}" alt="right arrow" />
-                </div>
-            </div>
-        </a>
-        {% endfor %}
+            </a>
+            {% endfor %}
+        </div>
         {% else %}
         <div class="flex-col align-center text-center w-100">
             <p class="text-dark-blue text-lg m-0">No past events found.</p>

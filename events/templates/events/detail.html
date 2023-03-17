@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% block title %}{{ event.name }}{% endblock title %}
 {% block content %}
-<div class="w-100 flex-col align-center px-3">
+<div class="event-detail-wrapper">
     <div class='self-flex-start w-100'>
-        <a href='/events' class='no-link-behavior'><p> < Back </p></a>
+        <a href='/events' class='no-link-behavior'><p> &larr; Back </p></a>
     </div>
     <div class="flex-col align-center text-center w-100">
-        <h1 class="text-dark-blue text-4xl uppercase m-0 mb-40px">{{event.name}}</h1>
+        <h1 class="club-page-name">{{event.name}}</h1>
     </div>
-    <div class="w-50">
+    <div class="club-body">
         <p><span class='text-bold'> When? </span> {{event.date}}</p>
         <p><span class='text-bold'> Where? </span> {{event.location}}</p>
         <p><span class='text-bold'> What? </span> {{event.description}}</p>
